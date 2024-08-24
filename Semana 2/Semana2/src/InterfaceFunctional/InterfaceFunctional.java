@@ -25,6 +25,7 @@ public class InterfaceFunctional {
         System.out.println();
         System.out.println("1.-Supplier");
         
+        //Print time
         Supplier<LocalDateTime> s = () -> LocalDateTime.now();
         LocalDateTime time = s.get();
         System.out.println(time);
