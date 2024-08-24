@@ -14,6 +14,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class InterfaceFunctional {
 
@@ -148,6 +149,34 @@ public class InterfaceFunctional {
         BiFunction<Integer, Integer, Boolean> BoBiFu = (x, z) -> (x > z);
         Boolean BoBiFuFi = BoBiFu.apply(9, 45); 
         System.out.println(BoBiFuFi);
+        
+        System.out.println();
+        System.out.println("****************************************");
+        System.out.println("8.- UnaryOperator");
+        
+        UnaryOperator<Integer> sum2 = x -> x + 1;
+        Integer result = sum2.apply(5);
+        System.out.println(result);
+        
+        UnaryOperator<String> space = ssp -> ssp.trim();
+        String resultSp = space.apply("    HELLO          ");
+        System.out.println(resultSp);
+        
+        UnaryOperator<Integer> square = x -> x * x;
+        Integer ressquare = square.apply(16);
+        System.out.println(ressquare);
+        
+        UnaryOperator<String> WUpp = Uword -> Uword.toUpperCase();
+        String resWUpp = WUpp.apply("miquella");
+        System.out.println(resWUpp);
+        
+        
+        
+        
+        
+        
+        
+        
         
         
     }
