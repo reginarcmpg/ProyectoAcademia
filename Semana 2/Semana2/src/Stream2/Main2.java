@@ -35,7 +35,7 @@ public class Main2 {
                  .map(e -> e.getCategory())
                  .distinct()
 
-                 .forEach(System.out::println);
+                 .forEach(System.out::println);//terminal
                 
 }
     

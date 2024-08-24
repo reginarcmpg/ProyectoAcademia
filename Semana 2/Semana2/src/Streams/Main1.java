@@ -32,10 +32,10 @@ public class Main1 {
               
         );
         
-        //      Filtra los libros que fueron publicados después del año 2000.
-        //      Ordena estos libros por el año de publicación en orden.
-        //      Mapea los libros filtrados a una nueva lista que contenga solo los títulos de los libros.
-        //      Limita el resultado a los primeros 5 títulos.
+    //      1.- Filter the books that were published after the year 1920.
+    //      2.- Sort these books by publication year in ascending order.
+    //      3.- Map the filtered books to a new list containing only the book titles.
+    //      4.- Limit the result to the first 5 titles.     
         
          
          book.stream()
@@ -43,7 +43,7 @@ public class Main1 {
                  .sorted(Comparator.comparing(Books::getYear))
                  .map(Books::getTitle)
                  .limit(5)
-                .forEach(S -> System.out.println(S));
+                .forEach(S -> System.out.println(S)); //terminal
          
     }
     
