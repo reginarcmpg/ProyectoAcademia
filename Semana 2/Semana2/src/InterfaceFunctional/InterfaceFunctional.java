@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -124,9 +125,31 @@ public class InterfaceFunctional {
         String FinRes = ConNameSt.apply("Elden"); 
         System.out.println(FinRes);
         
-        Function<String, String> Low = x -> x.toUpperCase();
-        String Low1 = Low.apply("elden ring"); 
-        System.out.println(Low1);
+        Function<String, String> UppF = x -> x.toUpperCase();
+        String UppF1 = UppF.apply("elden ring"); 
+        System.out.println(UppF1);
+        
+        System.out.println();
+        System.out.println("****************************************");
+        System.out.println("7.-BiFunctions");
+        
+        BiFunction<Integer, Integer, Double> avg = (x, z) -> (x * 1.0) / z;
+        Double avgFi = avg.apply(8, 7); 
+        System.out.println(avgFi);
+        
+        BiFunction<String, String, String> ConBiFu = (x, z) -> x + " " + z;
+        String ConBiFuFi = ConBiFu.apply("Hello", "Miquelle"); 
+        System.out.println(ConBiFuFi.toString());
+        
+        BiFunction<Integer, Integer, Double> power = (base, exponent) -> Math.pow(base, exponent);
+        Double poweruFi = power.apply(7, 3); 
+        System.out.println(poweruFi);
+        
+        BiFunction<Integer, Integer, Boolean> BoBiFu = (x, z) -> (x > z);
+        Boolean BoBiFuFi = BoBiFu.apply(9, 45); 
+        System.out.println(BoBiFuFi);
+        
+        
     }
     
 }
