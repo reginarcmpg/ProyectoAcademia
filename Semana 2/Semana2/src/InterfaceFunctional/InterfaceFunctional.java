@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -142,7 +143,7 @@ public class InterfaceFunctional {
         String ConBiFuFi = ConBiFu.apply("Hello", "Miquelle"); 
         System.out.println(ConBiFuFi.toString());
         
-        BiFunction<Integer, Integer, Double> power = (base, exponent) -> Math.pow(base, exponent);
+        BiFunction<Integer, Integer, Double> power = (base, exp) -> Math.pow(base, exp);
         Double poweruFi = power.apply(7, 3); 
         System.out.println(poweruFi);
         
@@ -170,8 +171,25 @@ public class InterfaceFunctional {
         String resWUpp = WUpp.apply("miquella");
         System.out.println(resWUpp);
         
+        System.out.println();
+        System.out.println("****************************************");
+        System.out.println("9.- BinaryOperator");
         
+        BinaryOperator<Integer> mulBiOp1 = (mulBiop1, mulBiop2) -> mulBiop1 * mulBiop2;
+        Integer FimulBiOp1 = mulBiOp1.apply(2, 3);
+        System.out.println(FimulBiOp1);
         
+        BinaryOperator<String> CobBiOp1 = (CobBiop1, CobBiop2) -> CobBiop1 + CobBiop2;
+        String CobBiOp1FI = CobBiOp1.apply("I Like ", "PIZZA");
+        System.out.println(CobBiOp1FI);
+         
+        BinaryOperator<Integer> OpOp = (x1, x2) -> x1/x2;
+        Integer OpOpFin = OpOp.apply(5, 7);
+        System.out.println(OpOpFin);
+        
+        BinaryOperator<Double> min = (a1, b1) -> Math.min(a1, b1);
+        Double MinFin = min.apply(2.5, 1.7);
+        System.out.println(MinFin);
         
         
         
