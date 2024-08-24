@@ -10,11 +10,7 @@ public class Main1 {
 
     public static void main(String[] args) {
        
-//      Filtra los libros que fueron publicados después del año 2000.
-//      Ordena estos libros por el año de publicación en orden descendente.
-//      Mapea los libros filtrados a una nueva lista que contenga solo los títulos de los libros.
-//      Limita el resultado a los primeros 5 títulos.
-        
+
          List<Books> book = Arrays.asList(
                 new Books("Guess How Much I Love You", "Sam McBratney", 1996, 50.65),
                 new Books("To Kill a Mockingbird", "Harper Lee", 1960, 10.99),
@@ -36,16 +32,18 @@ public class Main1 {
               
         );
         
+        //      Filtra los libros que fueron publicados después del año 2000.
+        //      Ordena estos libros por el año de publicación en orden.
+        //      Mapea los libros filtrados a una nueva lista que contenga solo los títulos de los libros.
+        //      Limita el resultado a los primeros 5 títulos.
+        
          
          book.stream()
                  .filter(s -> s.getYear() > 1920)
                  .sorted(Comparator.comparing(Books::getYear))
-                 //.peek(System.out::println.)
                  .map(Books::getTitle)
                  .limit(5)
-                 
-                 
-		.forEach(S -> System.out.println(S));
+                .forEach(S -> System.out.println(S));
          
     }
     
