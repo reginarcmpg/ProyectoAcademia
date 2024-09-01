@@ -1,5 +1,5 @@
 package Observer;
 
-public enum LipBrand {
+public enum LipBrand { //BRAND
 DIOR, MAC, CHANEL,NARS;
 }

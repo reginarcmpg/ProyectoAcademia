@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Director {
-	public void Coffe(Builder builder) {
+	public void Coffe(Builder builder) { //create coffe
 			builder.reset();
 	        builder.setType("LATTE");
 	        builder.setPrice(65);
@@ -16,7 +16,7 @@ public class Director {
     }
 
   
-    public void Te(Builder builder) {
+    public void Te(Builder builder) { //create te
     		builder.reset();
 	        builder.setType("BLACK");
 	        builder.setPrice(45);

@@ -5,7 +5,7 @@ public class Makeup extends Subject{
 
 	void Sub() {
 	
-		Notify();
+		Notify();//send notification to observers
 	}
 	
 }

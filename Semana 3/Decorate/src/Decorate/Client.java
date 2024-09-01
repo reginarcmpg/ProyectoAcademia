@@ -5,7 +5,7 @@ public class Client {
 	private String name;
 	private int cost;
 	
-	public Client(String name) {
+	public Client(String name) { //constructor
 		super();
 		this.name = name;
 		
