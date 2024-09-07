@@ -70,10 +70,6 @@ public class BookServiceImpl implements BookService {
     	bookrepository.deleteById(theId);
     }
 
-
-
-
-	
 }
 
 
