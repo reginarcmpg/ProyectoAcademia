@@ -26,7 +26,7 @@ public class Book {
     private String genre;
     
     @Column(name="price")
-    private int price;
+    private double price;
     
     
     @Column(name="published")

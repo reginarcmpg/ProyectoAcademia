@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/rest")
@@ -46,6 +47,14 @@ public class BookController {
     	boolean inStock = bookService.IsStock(bookId);
     		String message = inStock ? "Book available" : "Book not available";
     		return message ;
+    } 
+    
+    @GetMapping("/books/{discountPercentage}/price")//Books available
+    public List <String> Discount(@PathVariable double discountPercentage) {
+    	  List<Book> booksWithDiscount = bookService.PriceWithDiscount(discountPercentage);
+    	  return booksWithDiscount.stream()
+                  .map(book -> "Title: " + book.getTitle() + ", Price with discount: " + book.getPrice())
+                  .collect(Collectors.toList());
     } 
     
  

@@ -17,5 +17,8 @@ public interface BookService {
     boolean IsStock(int theId);// The boos is available or not
     
     void deleteById(int theId);//Delete book
+    
+    List<Book> PriceWithDiscount(double discountPercentage); //discount
+    
 
 }

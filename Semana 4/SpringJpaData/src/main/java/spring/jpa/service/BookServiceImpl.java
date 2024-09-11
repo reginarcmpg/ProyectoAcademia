@@ -13,6 +13,8 @@ import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -57,6 +59,18 @@ public class BookServiceImpl implements BookService {
     	Book book = entityManager.find(Book.class, bookId);
     	return book != null && book.getStock() > 0 ;
    }
+    
+    @Override
+    public List<Book> PriceWithDiscount(double discountPercentage){ //Discount with lambas
+    	 List<Book> books =  findAll();
+    	 return books.stream()
+    			 .map(book -> {
+    				 if(book.getPrice() >10){
+    					 book.setPrice(book.getPrice() - (book.getPrice() * (discountPercentage / 100)));
+    				 } 	return book; 
+    			 }) 
+    			 .collect(Collectors.toList()); 
+    }
     
     
     @Transactional
