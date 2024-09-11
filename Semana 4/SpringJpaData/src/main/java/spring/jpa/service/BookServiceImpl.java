@@ -1,6 +1,6 @@
 package spring.jpa.service;
 
-import spring.jpa.dao.BookRepository;
+import spring.jpa.dao.UserRepository;
 import spring.jpa.entity.Book;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +19,10 @@ public class BookServiceImpl implements BookService {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-    private BookRepository bookrepository;
+    private UserRepository bookrepository;
 
     @Autowired
-    public BookServiceImpl(BookRepository thebookrepository) {
+    public BookServiceImpl(UserRepository thebookrepository) {
     	bookrepository = thebookrepository;
     }
 
