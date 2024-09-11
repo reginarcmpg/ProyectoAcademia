@@ -1,6 +1,6 @@
 package spring.jpa.service;
 
-import spring.jpa.dao.UserRepository;
+import spring.jpa.dao.BookRepository;
 import spring.jpa.entity.Book;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +19,23 @@ public class BookServiceImpl implements BookService {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-    private UserRepository bookrepository;
+    private BookRepository bookrepository;
 
     @Autowired
-    public BookServiceImpl(UserRepository thebookrepository) {
+  
+    public BookServiceImpl(BookRepository thebookrepository) {
     	bookrepository = thebookrepository;
-    }
+ 	}
 
-    
+
     @Override
     public List<Book> findAll() { //find all books
         return bookrepository.findAll();
     }
 
-    
-   @Override
+ 
+
+@Override
    public Book findById(int theId) { //find by ID
     Optional<Book> result = bookrepository.findById(theId);
     return result.orElse(null);
@@ -69,6 +71,8 @@ public class BookServiceImpl implements BookService {
     public void deleteById(int theId) {//Delete book 
     	bookrepository.deleteById(theId);
     }
+
+
 
 }
 

@@ -28,8 +28,8 @@ public class User {
     @Column(name="rol")
     private String rol;
     
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Exam> exams = new ArrayList();
+   // @OneToMany(cascade = CascadeType.ALL)
+   // private List<Exam> exams = new ArrayList();
     
 }
 
