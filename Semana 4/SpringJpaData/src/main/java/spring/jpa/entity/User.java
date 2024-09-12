@@ -1,8 +1,5 @@
 package spring.jpa.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.AllArgsConstructor;
@@ -12,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="PERSON")
+@Table(name="Person")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,9 +24,7 @@ public class User {
 
     @Column(name="rol")
     private String rol;
-    
-   // @OneToMany(cascade = CascadeType.ALL)
-   // private List<Exam> exams = new ArrayList();
+
     
 }
 
