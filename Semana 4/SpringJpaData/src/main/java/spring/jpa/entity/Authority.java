@@ -4,27 +4,30 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import utils.AuthorityName;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="Person")
-public class User {
+@Table(name="Autorities")
+public class Authority {
+
+	 public Authority(AuthorityName name) {
+	        this.name = name;
+	    }
+	  
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id_user")
+    @Column(name="id_auto")
     private int id;
 
-    @Column(name="_name")
-    private String name;
+    @Enumerated(EnumType.STRING)
+    @Column(name="nameAuto")
+    private AuthorityName name;
 
-    @Column(name="_email")
-    private String email;
-
-    @Column(name="rol")
-    private String rol;
-
+   
     
 }
 
