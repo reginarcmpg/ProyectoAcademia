@@ -1,5 +1,8 @@
 package utils;
 
+
 public enum AuthorityName {
-READER, ADMIN, SUPERADMIN
+    ROLE_READER, 
+    ROLE_ADMIN, 
+    ROLE_SUPERADMIN
 }

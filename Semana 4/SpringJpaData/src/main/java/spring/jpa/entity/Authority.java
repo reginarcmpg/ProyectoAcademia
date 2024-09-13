@@ -6,17 +6,36 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import utils.AuthorityName;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
 @Table(name="Autorities")
 public class Authority {
 
-	 public Authority(AuthorityName name) {
-	        this.name = name;
-	    }
-	  
+    // Constructor vacío (necesario para Hibernate)
+    public Authority() {
+    }
+
+    // Constructor para inicializar con el nombre de la autoridad
+    public Authority(AuthorityName name) {
+        this.name = name;
+    }
+    
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public AuthorityName getName() {
+        return name;
+    }
+
+    public void setName(AuthorityName name) {
+        this.name = name;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +45,7 @@ public class Authority {
     @Enumerated(EnumType.STRING)
     @Column(name="name_auto")
     private AuthorityName name;
-
-   
-    
 }
-
-
 
 
 

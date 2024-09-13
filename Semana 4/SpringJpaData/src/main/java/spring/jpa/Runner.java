@@ -37,18 +37,18 @@ public class Runner implements CommandLineRunner {
 		
 		if(this.autorityRepository.count() == 0) {
 			this.autorityRepository.saveAll(List.of(
-					new Authority(AuthorityName.READER),
-					new Authority(AuthorityName.ADMIN),
-					new Authority(AuthorityName.SUPERADMIN)
+					new Authority(AuthorityName.ROLE_READER),
+					new Authority(AuthorityName.ROLE_ADMIN),
+					new Authority(AuthorityName.ROLE_SUPERADMIN)
 					));	
 		}
 		
 		if(this.userRepository.count() == 0) {
 			this.userRepository.saveAll(List.of(
 					
-					new Members("Regina", "123", List.of(this.autorityRepository.findByName(AuthorityName.ADMIN).get())),
-					new Members("Daniel", "123", List.of(this.autorityRepository.findByName(AuthorityName.READER).get())),
-					new Members("Diego", "123", List.of(this.autorityRepository.findByName(AuthorityName.SUPERADMIN).get()))
+					new Members("Regina", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_ADMIN).get())),
+					new Members("Daniel", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_READER).get())),
+					new Members("Diego", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_SUPERADMIN).get()))
 					
 					));
 		}
