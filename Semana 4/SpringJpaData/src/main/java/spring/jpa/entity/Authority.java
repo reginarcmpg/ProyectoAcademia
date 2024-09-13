@@ -24,7 +24,7 @@ public class Authority {
     private int id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="nameAuto")
+    @Column(name="name_auto")
     private AuthorityName name;
 
    

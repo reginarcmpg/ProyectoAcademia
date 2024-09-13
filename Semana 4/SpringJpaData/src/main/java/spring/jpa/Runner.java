@@ -1,14 +1,23 @@
-package utils;
+package spring.jpa;
 
 import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+
+
+
 import spring.jpa.dao.AuthorityRepository;
 import spring.jpa.dao.UserRepository;
 import spring.jpa.entity.Authority;
 import spring.jpa.entity.Members;
+import utils.AuthorityName;
 
+@Component
 public class Runner implements CommandLineRunner {
+	
+	
 
 	private final UserRepository userRepository;
 	private final AuthorityRepository autorityRepository;
@@ -23,6 +32,9 @@ public class Runner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		System.out.println("Runner is executing...plebes");
+		
 		if(this.autorityRepository.count() == 0) {
 			this.autorityRepository.saveAll(List.of(
 					new Authority(AuthorityName.READER),
@@ -33,9 +45,11 @@ public class Runner implements CommandLineRunner {
 		
 		if(this.userRepository.count() == 0) {
 			this.userRepository.saveAll(List.of(
+					
 					new Members("Regina", "123", List.of(this.autorityRepository.findByName(AuthorityName.ADMIN).get())),
 					new Members("Daniel", "123", List.of(this.autorityRepository.findByName(AuthorityName.READER).get())),
 					new Members("Diego", "123", List.of(this.autorityRepository.findByName(AuthorityName.SUPERADMIN).get()))
+					
 					));
 		}
 		
