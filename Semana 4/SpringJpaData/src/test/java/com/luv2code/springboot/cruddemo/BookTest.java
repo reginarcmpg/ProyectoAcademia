@@ -21,14 +21,14 @@ import utils.SecurityUser;
 
 public class BookTest {
 
-    // Tests for Members entity
+
     @Test
     public void testMemberCreation() {
         Members member = new Members("user1", "password1", null);
         assertNotNull(member);
         assertEquals("user1", member.getUsername());
         assertEquals("password1", member.getPassword());
-        assertNull(member.getAuthorities()); // Ensure authorities is null
+        assertNull(member.getAuthorities());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class BookTest {
         member.setPassword("password2");
         assertEquals("user2", member.getUsername());
         assertEquals("password2", member.getPassword());
-        assertNull(member.getAuthorities()); // Ensure authorities is null
+        assertNull(member.getAuthorities()); 
     }
 
     @Test
@@ -54,7 +54,7 @@ public class BookTest {
         assertEquals(AuthorityName.ROLE_ADMIN, member.getAuthorities().get(0).getName());
     }
 
-    // Tests for Authority entity
+
     @Test
     public void testAuthorityCreation() {
         Authority authority = new Authority(AuthorityName.ROLE_ADMIN);
@@ -73,8 +73,6 @@ public class BookTest {
     public void testAuthorityEnum() {
         Authority authority = new Authority(AuthorityName.ROLE_ADMIN);
         assertEquals(AuthorityName.ROLE_ADMIN, authority.getName());
-
-        // Change the AuthorityName and verify
         authority.setName(AuthorityName.ROLE_READER);
         assertEquals(AuthorityName.ROLE_READER, authority.getName());
     }
@@ -109,7 +107,6 @@ public class BookTest {
         assertEquals(15, book.getStock());
     }
 
-    // Tests for SecurityAuthority
     @Test
     public void testSecurityAuthorityGetAuthority() {
         Authority authority = new Authority(AuthorityName.ROLE_ADMIN);
@@ -118,7 +115,6 @@ public class BookTest {
         assertEquals(AuthorityName.ROLE_ADMIN.toString(), securityAuthority.getAuthority());
     }
 
-    // Tests for SecurityUser
     @Test
     public void testSecurityUserGetAuthorities() {
         Authority authority = new Authority(AuthorityName.ROLE_ADMIN);
@@ -146,7 +142,6 @@ public class BookTest {
         assertEquals("user3", securityUser.getUsername());
     }
     
-    // Tests for SecurityUserDetailsService
     private UserRepository userRepository;
     private SecurityUserDetailsService securityUserDetailsService;
 
