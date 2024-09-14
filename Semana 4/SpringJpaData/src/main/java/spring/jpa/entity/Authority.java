@@ -15,12 +15,10 @@ public class Authority {
     public Authority() {
     }
 
-
     public Authority(AuthorityName name) {
         this.name = name;
     }
     
-
     public int getId() {
         return id;
     }

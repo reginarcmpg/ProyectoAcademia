@@ -20,7 +20,6 @@ public class BookController {
     	bookService = theBookService;
     }
 
-
     @GetMapping("/books")// Get the list of all books
     public List<Book> findAll() {
         return bookService.findAll();
@@ -35,12 +34,10 @@ public class BookController {
         return theBook;
     }
     
-    
     @GetMapping("/books/genre/{genre}") //Number of books by genre
     public long countBooksByGenre(@PathVariable String genre) {
         return bookService.countByGenre(genre);
     }
-    
     
     @GetMapping("/books/{bookId}/stock")//Books available
     public String IsStock(@PathVariable int bookId) {
@@ -56,20 +53,17 @@ public class BookController {
                   .map(book -> "Title: " + book.getTitle() + ", Price with discount: " + book.getPrice())
                   .collect(Collectors.toList());
     } 
-    
  
     @PostMapping("/books") //add new post
     public Book addBook(@RequestBody Book theBook) {
         theBook.setId(0);
         return bookService.save(theBook);
     }
-
     
     @PutMapping("/books") //update a book
     public Book updateBook(@RequestBody Book theBook) {
         return bookService.save(theBook);
     }
-
     
     @DeleteMapping("/books/{bookId}")//delete books
     public String deleteBook(@PathVariable int bookId) {

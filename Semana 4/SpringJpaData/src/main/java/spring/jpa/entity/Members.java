@@ -16,14 +16,12 @@ public class Members {
     public Members() {
     }
 
-
     public Members(String username, String password, List<Authority> authorities) {
         this.username = username;
         this.password = password;
         this.authorities = authorities;
     }
 
-   
     public int getId() {
         return id;
     }

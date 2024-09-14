@@ -11,8 +11,7 @@ public class SecurityAuthority implements GrantedAuthority {
 	
 	@Override
 	public String getAuthority() {
-		// TODO Auto-generated method stub
-		return authoriry.getName().toString();
+	 return authoriry.getName().toString();
 	}
 	
 

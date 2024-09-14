@@ -23,7 +23,7 @@ public class Security {
 	  
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-	    http
+		http
 	        .httpBasic()
 	        .and()
 	        .authorizeHttpRequests(authorizeRequests -> 
@@ -37,9 +37,7 @@ public class Security {
 	    return http.build();
 	}
 
-
-	
-	  @Bean
+	@Bean
 	  public PasswordEncoder passwordEnconder() {
 		  return NoOpPasswordEncoder.getInstance();
 

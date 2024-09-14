@@ -17,18 +17,13 @@ import utils.AuthorityName;
 @Component
 public class Runner implements CommandLineRunner {
 	
-	
-
 	private final UserRepository userRepository;
 	private final AuthorityRepository autorityRepository;
-	
-	
 	
 	public Runner(UserRepository userRepository, AuthorityRepository autorityRepository) {
 		this.userRepository = userRepository;
 		this.autorityRepository = autorityRepository;
 	}
-
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -46,11 +41,11 @@ public class Runner implements CommandLineRunner {
 		if(this.userRepository.count() == 0) {
 			this.userRepository.saveAll(List.of(
 					
-					new Members("Regina", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_ADMIN).get())),
-					new Members("Daniel", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_READER).get())),
-					new Members("Diego", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_SUPERADMIN).get()))
+				new Members("Regina", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_ADMIN).get())),
+				new Members("Daniel", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_READER).get())),
+				new Members("Diego", "123", List.of(this.autorityRepository.findByName(AuthorityName.ROLE_SUPERADMIN).get()))
 					
-					));
+				));
 		}
 		
 	}

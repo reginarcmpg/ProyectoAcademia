@@ -6,6 +6,6 @@ import spring.jpa.entity.Members;
 
 
 public interface UserRepository extends JpaRepository<Members, Integer> {
-
+	
     Optional<Members> findByUsername(String username);
 }
