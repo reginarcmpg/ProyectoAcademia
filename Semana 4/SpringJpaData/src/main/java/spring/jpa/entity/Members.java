@@ -12,18 +12,18 @@ import java.util.List;
 @Table(name="Person")
 public class Members {
 
-    // Constructor vacío (necesario para Hibernate)
+
     public Members() {
     }
 
-    // Constructor para inicializar los miembros con nombre de usuario, contraseña y autoridades
+
     public Members(String username, String password, List<Authority> authorities) {
         this.username = username;
         this.password = password;
         this.authorities = authorities;
     }
 
-    // Getters y Setters
+   
     public int getId() {
         return id;
     }
