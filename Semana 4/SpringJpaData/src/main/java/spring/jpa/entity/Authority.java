@@ -11,16 +11,16 @@ import utils.AuthorityName;
 @Table(name="Autorities")
 public class Authority {
 
-    // Constructor vacío (necesario para Hibernate)
+  
     public Authority() {
     }
 
-    // Constructor para inicializar con el nombre de la autoridad
+
     public Authority(AuthorityName name) {
         this.name = name;
     }
     
-    // Getters y Setters
+
     public int getId() {
         return id;
     }

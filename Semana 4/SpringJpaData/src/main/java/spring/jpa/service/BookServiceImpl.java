@@ -66,7 +66,7 @@ public class BookServiceImpl implements BookService {
     	 return books.stream()
     			 .map(book -> {
     				 if(book.getPrice() >10){
-    					 book.setPrice(book.getPrice() - (book.getPrice() * (discountPercentage / 100)));
+    					 book.setPrice(book.getPrice() - (book.getPrice() * (discountPercentage / 10)));
     				 } 	return book; 
     			 }) 
     			 .collect(Collectors.toList()); 
