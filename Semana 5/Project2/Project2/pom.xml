@@ -14,16 +14,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cruddemoV2</name>
 	<description>Demo project for Spring Boot</description>
-	
-    <properties>
-        <java.version>17</java.version>
-        <!-- Thymeleaf properties -->
-        <spring.thymeleaf.prefix>classpath:/templates/</spring.thymeleaf.prefix>
-        <spring.thymeleaf.suffix>.html</spring.thymeleaf.suffix>
-        <spring.thymeleaf.mode>HTML</spring.thymeleaf.mode>
-        <spring.thymeleaf.encoding>UTF-8</spring.thymeleaf.encoding>
-    </properties>
-    
+	<properties>
+		<java.version>17</java.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -65,12 +58,10 @@
     <artifactId>h2</artifactId>
     <scope>test</scope>
 </dependency>
-	<!--thyme-->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-</dependency>
 
+
+		
+		
 		
 		<dependency>
 		<groupId>org.springframework.boot</groupId>
@@ -101,8 +92,6 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-	
-	
 	
 
 
